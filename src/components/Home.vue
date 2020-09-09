@@ -304,13 +304,15 @@ import axios from 'axios'
         var data = {};
         for(let i=0; i<this.features.length; ++i) {
           data[this.features[i].name] = this.features[i].ans;
+          // Aa28 在後端 +1 
         }
           
         console.log(data);
         const path = this.host + '/submit';
         axios.post(path, data)
           .then((res) => {
-            this.label = res.data;
+            this.label = res.data.split(' ')[0];
+            console.log(res.data.split(' '));
             if (this.label == 0) {
               this.level = 'low';
               if (this.sex == 0) this.risk = 'lower than 4%';
