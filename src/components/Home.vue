@@ -354,7 +354,8 @@ import axios from 'axios'
     },
 
     created() {
-      this.host = 'http://' + document.location.hostname + ':1234';
+      // this.host = 'http://' + document.location.hostname + ':1234';
+      this.host = 'https://predict-ad.herokuapp.com';
     },
   }
 </script>
